@@ -1,0 +1,402 @@
+:root {
+  --white: white;
+  --gray: rgb(92, 92, 92);
+  --main: rgb(26, 26, 26);
+  --light-grey: rgb(225, 225, 225);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+body {
+  background-color: rgb(58, 58, 58);
+}
+
+main {
+  background-color: rgb(58, 58, 58);
+  display: flex;
+}
+
+.mt-main {
+  margin-top: 15%;
+}
+
+.collapse.navbar-collapse {
+  margin-top: 2%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--main);
+  position: fixed;
+  width: 100%;
+  z-index: 22;
+  top: 0px;
+  left: 0px;
+}
+.offcanvas-header {
+  background-color: var(--main);
+}
+.offcanvas-body {
+  background-color: var(--main);
+}
+.offcanvas-title {
+  font-size: 1.3em;
+}
+.btn-close-white {
+  filter: invert(1);
+}
+
+.offcanvas-title {
+  letter-spacing: 0.085em;
+  font-size: 1.5em;
+}
+
+.text-orange {
+  color: rgb(255, 230, 184);
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(33, 180, 199);
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-left: 0.5em;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: rgb(125, 193, 202);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  position: relative;
+  color: rgb(33, 180, 199);
+  font-size: 1.15em;
+  font-weight: 400;
+  margin-right: 0.8em;
+  margin-bottom: 20px;
+  text-decoration: none;
+  letter-spacing: 0.07em;
+  justify-content: space-evenly;
+  margin-left: 1.5em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  font-weight: 500;
+  color: rgb(125, 193, 202);
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+}
+
+li.nav-item {
+  margin-left: 0%;
+}
+
+.plus-btn {
+  color: rgb(33, 180, 199);
+  font-size: 1em;
+}
+.plus-btn:hover {
+  color: rgb(205, 255, 253);
+}
+
+.tooltip-1,
+.tooltip-2 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip1text,
+.tooltip2text {
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.tooltip-1 .tooltip1text {
+  visibility: hidden;
+  width: 8em;
+  background-color: rgba(0, 0, 0, 0.404);
+  color: rgb(245, 245, 245);
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  left: 200%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip-2 .tooltip2text {
+  visibility: hidden;
+  width: 7em;
+  color: rgb(245, 245, 245);
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip-1:hover .tooltip1text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-2:hover .tooltip2text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-img-top {
+  padding: 0px;
+}
+.card {
+  border: none;
+}
+.small-cards {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.card-text {
+  font-weight: 500;
+  color: rgb(90, 90, 90);
+}
+
+.hp-text,
+.hp-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  background-color: rgb(231, 231, 231);
+}
+
+.card-link {
+  color: rgb(112, 112, 112);
+}
+
+.card-link:hover {
+  text-decoration: underline rgba(33, 180, 199, 0.815);
+  color: var(--main);
+}
+
+.btn-blue {
+  background-color: rgb(33, 180, 199);
+  color: var(--white);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.bywho {
+  color: rgb(160, 160, 160);
+}
+
+.username {
+  color: rgb(253, 175, 30);
+}
+
+.py-5 {
+  padding-top: 2em !important;
+  padding-bottom: 2em !important;
+}
+
+.footer-text {
+  color: white;
+}
+
+h2.fs-5 {
+  color: rgb(33, 180, 199);
+  letter-spacing: 0.065em;
+  font-weight: 600;
+}
+.fs-5 {
+  font-size: 1.5em !important;
+}
+
+.bot {
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(26, 26, 26);
+  margin-top: 1.5em;
+}
+
+h5 {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: rgb(33, 180, 199);
+}
+
+.list-inline-item {
+  padding-left: 2em;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.list-inline-item a {
+  position: relative;
+  color: rgb(205, 255, 253);
+  text-decoration: none;
+}
+
+.list-inline-item a:hover {
+  color: rgb(33, 180, 199);
+}
+
+@media screen and (max-width: 576px) {
+  .navbar .navbar-brand {
+    font-size: 1.4em;
+  }
+
+  h3,
+  .nav-link {
+    font-size: 1.3em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+  h5 {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .navbar .navbar-brand {
+    font-size: 1.2em;
+  }
+
+  h3,
+  .nav-link {
+    font-size: 1.2em;
+  }
+  h4 {
+    font-size: 1.1em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  h5 {
+    font-size: 0.9em;
+  }
+}
+
+.btn-secondary:hover {
+  background-color: rgb(33, 180, 199);
+  color: black;
+  border: none;
+}
+
+.form-label {
+  color: rgb(33, 180, 199);
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.form-text-b {
+  color: rgb(195, 195, 195);
+}
+
+.form-top {
+  width: 50%;
+  margin-bottom: 3%;
+}
+
+.step {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.comment-img {
+  display: block;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+.textarea.form-control {
+  background-color: white;
+}
+.mt-x {
+  margin-top: 5%;
+}
+
+.table-border {
+  border: transparent;
+}
+td {
+  text-align: left;
+}
+
+.fa.fa-trash-o {
+  margin-left: 50%;
+}
+
+.ms-auto {
+  color: var(--gray);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  color: var(--gray);
+}
+
+.edit:hover {
+  color: rgb(33, 180, 199);
+}
+
+.trash:hover {
+  color: rgb(33, 180, 199);
+}
+
+.welcome {
+  font-size: 1.1em;
+  letter-spacing: 0.085em;
+  font-weight: 600;
+  color: rgb(205, 255, 253);
+}
+
+.user {
+  color: rgb(33, 180, 199);
+  font-weight: 700;
+}
+
+h2 {
+  color: rgb(255, 230, 184);
+}

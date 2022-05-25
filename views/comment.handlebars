@@ -1,0 +1,109 @@
+<div class="container-fluid text-center" id="comment">
+  <div class="col small-cards">
+    <div class="card">
+      <div class="clearfix">
+        <div class="container">
+          <div class="row">
+            <div class="col" style="padding:0px">
+              <img src="{{comment.image}}" class="card-img-top text-center comment-img" alt="{{comment.title}}">
+              <div class="card-body">
+                <h5 class="card-title mt-3">{{comment.title}}</h5>
+                <p class="card-text margin-left">{{comment.content}}</p>
+                <span class="bywho">By <span class="username">{{comment.user.name}}</span> on {{format_date
+                  comment.date_created}} </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-2 mb-1">
+            <form class="form new-comment-form" data-id={{comment.id}}>
+              <div class="modal-body">
+                <div class="form-group ">
+                  <textarea type="text" class="form-control" id="content" placeholder="Comment here..."></textarea>
+                </div>
+              </div>
+              <div class="modal-footer form-group">
+                {{#if logged_in}}
+                <button type="submit" class="btn btn-blue" id="submit">Submit</button>
+                {{else}}
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal"><button class="btn btn-blue" id="comment-btn">
+                    <div class="tooltip-1">Submit<span class="tooltip1text">Log in please</span></div>
+                  </button></a>
+                {{/if}}
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row">
+    {{#each comment.Notes as |note|}}
+    <div class="col-lg-3 col-sm-12 small-cards">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">{{note.content}}</p>
+          <span class="bywho">Created by <span class="username">{{note.user.name}}</span> on {{format_date
+            note.date_created}} </span>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form login-form">
+          <div class="modal-body">
+
+            <div class="form-group mb-3">
+              <label for="email-login" class="form-label">Email</label>
+              <input class="form-control" type="text" id="email-login" placeholder="name@example.com">
+              <div id="emailHelp" class="form-text">Your email will be confidential.</div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password-login" class="form-label">Password</label>
+              <input class="form-control" type="password" id="password-login" placeholder="Password">
+              <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                  Password must be 8-20 characters long.
+                </span>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer form-group">
+            <a href="/signup"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sign
+                Up</button></a>
+            {{#if has_comment}}
+            <a href="/account-comment"><button type="submit" class="btn btn-blue" id="login">Log
+                In</button></a>
+            {{else}}
+            <a href="/account-comment"><button type="submit" class="btn btn-blue" id="login">Log In</button></a>
+            {{/if}}
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
+
+<script src="/js/login.js"></script>
+<script src="/js/comment-btn.js"></script>

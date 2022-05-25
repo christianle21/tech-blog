@@ -1,0 +1,22 @@
+<div class="container-fluid" id="comment">
+
+  <div class="row">
+    {{#each comments as |comment|}}
+    <div class="col-lg-3 col-md-4 col-sm-6 small-cards">
+      <div class="card">
+        <a class="card-link" href="/comment/{{comment.id}}">
+          <img src="{{comment.image}}" class="card-img-top" alt="{{comment.title}}">
+          <div class="card-body">
+            <h5 class="card-title hp-title" data-id="{{comment.id}}">{{comment.title}}</h5>
+            <p class="card-text hp-text mb-2">{{comment.content}}</p>
+            <p class="card-text bywho"> By <span class="username">{{user.name}}</span> on {{format_date
+              comment.date_created}}</p>
+          </div>
+      </div>
+      </a>
+
+    </div>
+    {{/each}}
+  </div>
+
+</div>

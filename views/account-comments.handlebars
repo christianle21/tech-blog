@@ -1,0 +1,34 @@
+{{#if comments.length}}
+<div class="container-fluid" id="comments">
+    <div class="row account-cards comment-list">
+        {{#each comments as |comment|}}
+        <div class="col-lg-3 col-sm-12 small-cards">
+            <div class="card">
+                <img src="{{comment.image}}"  class="card-img-top" alt="{{comment.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{comment.title}}</h5>
+                    <p class="card-text">{{comment.content}}</p>
+                    <span class="bywho">Created by <span class="username">{{user.name}}</span> on {{format_date
+                        comment.date_created}} </span>
+                    </br>
+                    <div class="ms-auto"><a class="edit" href="/edit-comment/{{comment.id}}"><i class="fa fa-edit" type="submit"
+                                style="font-size:35px;"></i></a><i class="fa fa-trash-o trash" data-id="{{comment.id}}"
+                            type="submit" style="font-size:35px;"></i></div>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{else}}
+<div class="container-fluid empty-text">
+    <p class="text-center welcome">
+        Welcome! <span class="user">{{username}}</span>, start commenting right now!</p>
+    <div class="text-center">
+</div>
+{{/if}}
+
+<script src="/js/delete-comment.js"></script>
+<script src="/js/edit-comment.js"></script>
